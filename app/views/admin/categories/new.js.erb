@@ -5,15 +5,15 @@
     <%= render 'form' %>
   </div>
   <script type="text/javascript">
-    <!-- Rewrite cancel link to close that form -->
+    //<!-- Rewrite cancel link to close that form -->
     $$('.concrete a, .top-layer').each(function(cancel_link) {
       cancel_link.observe('click', function(event) {
         $$('.top-layer').each(function(layer) { layer.remove(); });
         event.stop();
       });
-      <!-- Ok, it's just for Mister Perfect -->
+      //<!-- Ok, its just for Mister Perfect -->
       cancel_link.writeAttribute('href', '#close_form');
-      <!-- Intercepts form submission -->
+      //<!-- Intercepts form submission -->
       $$('.concrete form').each(function(cat_form) {
         cat_form.observe('submit', function(event) {
           cat_form.request({
